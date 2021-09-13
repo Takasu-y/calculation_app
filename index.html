@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap読み込み -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Calculation App</title>
+</head>
+<body>
+    <div id="calc-app" class="d-flex justify-content-center vh-100 bg-black">
+        <div class="app m-auto border border-secondary rounded">
+            <!-- display -->
+            <div class="text-white w-100 p-2">
+                <div class="border border-white px-2 py-4">
+                    <p>-> {{ proccess }} {{ input }}</p>
+                    <h2 class="text-right">{{ result }}<span v-if="isPercent"> %</span></h2>
+                </div>
+            </div>
+            <!-- ボタン配置 -->
+            <div>
+                <ul class="d-flex flex-wrap justify-content-around list-unstyled">
+                    <li><button @click="allClear" type="button" class="btn btn-secondary btn-size rounded-circle">AC</button></li>
+                    <li><button @click="negate" type="button" class="btn btn-secondary btn-size rounded-circle">+/-</button></li>
+                    <li><button @click="convertToPercent" type="button" class="btn btn-secondary btn-size rounded-circle">%</button></li>
+                    <li><button @click="inputAny('÷')" type="button" class="btn btn-warning btn-size rounded-circle">÷</button></li>
+                    <li><button @click="inputAny(7)" type="button" class="btn btn-dark btn-size rounded-circle">7</button></li>
+                    <li><button @click="inputAny(8)" type="button" class="btn btn-dark btn-size rounded-circle">8</button></li>
+                    <li><button @click="inputAny(9)" type="button" class="btn btn-dark btn-size rounded-circle">9</button></li>
+                    <li><button @click="inputAny('×')" type="button" class="btn btn-warning btn-size rounded-circle">×</button></li>
+                    <li><button @click="inputAny(4)" type="button" class="btn btn-dark btn-size rounded-circle">4</button></li>
+                    <li><button @click="inputAny(5)" type="button" class="btn btn-dark btn-size rounded-circle">5</button></li>
+                    <li><button @click="inputAny(6)" type="button" class="btn btn-dark btn-size rounded-circle">6</button></li>
+                    <li><button @click="inputAny('-')" type="button" class="btn btn-warning btn-size rounded-circle">-</button></li>
+                    <li><button @click="inputAny(1)" type="button" class="btn btn-dark btn-size rounded-circle">1</button></li>
+                    <li><button @click="inputAny(2)" type="button" class="btn btn-dark btn-size rounded-circle">2</button></li>
+                    <li><button @click="inputAny(3)" type="button" class="btn btn-dark btn-size rounded-circle">3</button></li>
+                    <li><button @click="inputAny('+')" type="button" class="btn btn-warning btn-size rounded-circle">+</button></li>
+                    <li><button @click="inputAny(0)" type="button" class="btn btn-dark zero-btn-size rounded-pill">0</button></li>
+                    <li><button @click="calculate" type="button" class="btn btn-warning btn-size rounded-circle">=</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vue.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./vue.js"></script>
+</body>
+</html>

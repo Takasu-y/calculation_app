@@ -1,0 +1,49 @@
+/* box-sizing:border-boxの設定 */
+/* marginのリセット */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    box-sizing: inherit;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* a要素のテキストカラーを継承する */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* main要素にoverflow-x:hiddenを指定する */
+main {
+    overflow-x: hidden;
+}
+
+.app {
+    width: 320px;
+    height: 560px;
+}
+
+.btn-size {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 8px;
+}
+
+.zero-btn-size {
+    width: 230px;
+    height: 72px;
+    margin-bottom: 8px;
+}
+
+.bg-black {
+    background-color: rgb(0, 0, 0);
+}
